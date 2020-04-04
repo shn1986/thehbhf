@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Details Are About us</h1>
-<h2>Wait a moment... Launching Soon With Keeti Looti and Rubur Trubur Contents</h2>
+<h3> Lahore Air Quality Index</h3>
+Date Observed: {{ api.0.DateObserved }}
+<br/>
+Reporting Area: {{ api.0.ReportingArea }}
+<br/>
+Air Quality Index: {{ api.0.AQI }}
+<br/>
+Category: {{ api.0.Category.Name }}
 {% endblock %}

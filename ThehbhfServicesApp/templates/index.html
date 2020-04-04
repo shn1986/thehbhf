@@ -1,5 +1,90 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Hello World</h1>
-<h2>Website is Under Construction, Launching Soon With Keeti Looti and Rubur Trubur Contents</h2>
+
+{% if SearchCriteria %}
+    {{ SearchCriteria}}
+{% endif %}
+
+{% if api %}
+    {% if api == "error..." %}
+        There was an error, Please try again...
+    {% else %}
+        
+
+        <div class="jumbotron">
+            <!-- {% if all_items %}
+                <h3>Items Available in Store..</h3>
+                <ul>
+                    {% for items in all_items %}
+                        <li>{{items.itemname}} | {{items.itemsize}}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %} -->
+            <p class="lead">{{ api.0.ReportingArea }} Air Quality Index is {{ api.0.AQI }} as observed on {{ api.0.DateObserved }}</p>
+            <p class="display-5"> 
+                <h4>Caution {{ api.0.Category.Name }}</h4>  
+                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more - Zipcode</a>
+            </p>
+            <div class="Table">
+                    <div class="Title">
+                        <p>Summary Stats - Country Wise</p>
+                    </div>
+                        <div class="Heading">
+                            <div class="Cell">
+                                <p>Country</p>
+                            </div>
+                            <div class="Cell">
+                                <p>New Confirmed</p>
+                            </div>
+                            <div class="Cell">
+                                <p>Total Confirmed</p>
+                            </div>
+                            <div class="Cell">
+                                <p>New Deaths</p>
+                            </div>
+                            <div class="Cell">
+                                <p>Total Deaths</p>
+                            </div>
+                            <div class="Cell">
+                                <p>New Recovered</p>
+                            </div>
+                            <div class="Cell">
+                                <p>Total Recovered</p>
+                            </div>
+                        </div>
+
+            {% for items in api_covid19_summary.Countries %}         
+               {% if items.Country %}
+                <div class="Row">
+                    <div class="Cell">
+                        <p>{{ items.Country }}</p>
+                    </div>
+                    <div class="Cell">
+                        <p>{{ items.NewConfirmed }}</p>
+                    </div>
+                    <div class="Cell">
+                        <p>{{ items.TotalConfirmed }}</p>
+                    </div>
+                    <div class="Cell">
+                        <p>{{ items.NewDeaths }}</p>
+                    </div>
+                    <div class="Cell">
+                        <p>{{ items.TotalDeaths }}</p>
+                    </div>
+                    <div class="Cell">
+                        <p>{{ items.NewRecovered }}</p>
+                    </div>
+                    <div class="Cell">
+                        <p>{{ items.TotalRecovered }}</p>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+            </div>
+            <!-- <hr class="my-4"> -->
+            
+        </div>
+
+    {% endif %}
+{% endif %}
 {% endblock %}
