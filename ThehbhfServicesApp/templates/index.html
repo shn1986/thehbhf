@@ -20,67 +20,38 @@
                     {% endfor %}
                 </ul>
             {% endif %} -->
-            <p class="lead">{{ api.0.ReportingArea }} Air Quality Index is {{ api.0.AQI }} as observed on {{ api.0.DateObserved }}</p>
-            <p class="display-5"> 
-                <h4>Caution {{ api.0.Category.Name }}</h4>  
-                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more - Zipcode</a>
-            </p>
-            <div class="Table">
-                    <div class="Title">
-                        <p>Summary Stats - Country Wise</p>
-                    </div>
-                        <div class="Heading">
-                            <div class="Cell">
-                                <p>Country</p>
-                            </div>
-                            <div class="Cell">
-                                <p>New Confirmed</p>
-                            </div>
-                            <div class="Cell">
-                                <p>Total Confirmed</p>
-                            </div>
-                            <div class="Cell">
-                                <p>New Deaths</p>
-                            </div>
-                            <div class="Cell">
-                                <p>Total Deaths</p>
-                            </div>
-                            <div class="Cell">
-                                <p>New Recovered</p>
-                            </div>
-                            <div class="Cell">
-                                <p>Total Recovered</p>
-                            </div>
-                        </div>
-
+            <marquee><p class="lead">{{ api.0.ReportingArea }} Air Quality Index is {{ api.0.AQI }} as observed on {{ api.0.DateObserved }} {{ api.0.Category.Name }}</p></marquee>
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for country names..">    
+            <div class="table-responsive">
+            <table id="dCoronaVirusTable" class="table table-hover table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Country</th>
+                      <th scope="col">New Confirmed</th>
+                      <th scope="col">Total Confirmed</th>
+                      <th scope="col">New Deaths</th>
+                      <th scope="col">Total Deaths</th>
+                      <th scope="col">New Recovered</th>
+                      <th scope="col">Total Recovered</th>
+                    </tr>
+                  </thead>
+                
             {% for items in api_covid19_summary.Countries %}         
-               {% if items.Country %}
-                <div class="Row">
-                    <div class="Cell">
-                        <p>{{ items.Country }}</p>
-                    </div>
-                    <div class="Cell">
-                        <p>{{ items.NewConfirmed }}</p>
-                    </div>
-                    <div class="Cell">
-                        <p>{{ items.TotalConfirmed }}</p>
-                    </div>
-                    <div class="Cell">
-                        <p>{{ items.NewDeaths }}</p>
-                    </div>
-                    <div class="Cell">
-                        <p>{{ items.TotalDeaths }}</p>
-                    </div>
-                    <div class="Cell">
-                        <p>{{ items.NewRecovered }}</p>
-                    </div>
-                    <div class="Cell">
-                        <p>{{ items.TotalRecovered }}</p>
-                    </div>
-                </div>
+               {% if items.Country and items.TotalConfirmed > 0 %}
+                <tr class="table-active">
+                    <td>{{ items.Country }}</td>
+                    <td>{{ items.NewConfirmed }}</td>
+                    <td>{{ items.TotalConfirmed }}</td>
+                    <td>{{ items.NewDeaths }}</td>
+                    <td>{{ items.TotalDeaths }}</td>
+                    <td>{{ items.NewRecovered }}</td>
+                    <td>{{ items.TotalRecovered }}</td>
+                 </tr>
                 {% endif %}
             {% endfor %}
-            </div>
+            </tbody>
+        </table> 
+        </div>
             <!-- <hr class="my-4"> -->
             
         </div>
