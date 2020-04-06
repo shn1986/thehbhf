@@ -1,50 +1,22 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <style>
-        #myInput {
-                background-image: url('/static/admin/img/search/search_1.png'); /* Add a search icon to input */
-                background-position: 10px 12px; /* Position the search icon */
-                background-repeat: no-repeat; /* Do not repeat the icon image */
-                width: 100%; /* Full-width */
-                font-size: 16px; /* Increase font-size */
-                padding: 12px 20px 12px 40px; /* Add some padding */
-                border: 1px solid #ddd; /* Add a grey border */
-                margin-bottom: 12px; /* Add some space below the input */
-              }
-      </style>  
+ 
     <!-- Required meta tags -->
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes"> 
     
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <!-- Google Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-      <script>
-        function myFunction() {
-          // Declare variables
-          var input, filter, table, tr, td, i, txtValue;
-          input = document.getElementById("myInput");
-          filter = input.value.toUpperCase();
-          table = document.getElementById("dCoronaVirusTable");
-          tr = table.getElementsByTagName("tr");
-        
-          // Loop through all table rows, and hide those who don't match the search query
-          for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[0];
-            if (td) {
-              txtValue = td.textContent || td.innerText;
-              if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
-              } else {
-                tr[i].style.display = "none";
-              }
-            }
-          }
-        }
-        </script>
-    <title>The House Of Bespoke | HighFit Technologies</title>
+    <!-- Custome CSS and JS -->
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/custom/style.css">
+    <script src="/static/admin/js/custom/custom.js"></script>
+    
+    <title>The Honey Bee Hub Feed Solutions  </title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -98,6 +70,37 @@
     </div>
         
       <div class ="container">
+        <div class="row text-center">
+        <div class="col">
+          <div class="counter">
+            <i class="fa fa-code fa-2x"></i>
+            <h2 class="timer count-title count-number" data-to="12" data-speed="1500"></h2>
+            <p class="count-text ">Our Customers</p>
+          </div>
+              </div>
+              <div class="col">
+                  <div class="counter">
+                       <i class="fa fa-coffee fa-2x"></i>
+                       <h2 class="timer count-title count-number" data-to="40" data-speed="1500"></h2>
+                       <p class="count-text ">Happy Clients</p>
+                   </div>
+                </div>
+                <div class="col">
+                  <div class="counter">
+                       <i class="fa fa-lightbulb-o fa-2x"></i>
+                       <h2 class="timer count-title count-number" data-to="200" data-speed="1500"></h2>
+                       <p class="count-text ">Projects Completed + </p>
+                   </div>
+                </div>
+                <div class="col">
+                  <div class="counter">
+                    <i class="fa fa-bug fa-2x"></i>
+                    <h2 class="timer count-title count-number" data-to="157" data-speed="1500"></h2>
+                    <p class="count-text ">Coffee With Clients</p>
+                  </div>
+                </div>
+              </div>
+              
           {% block content %}
             
           {% endblock %}

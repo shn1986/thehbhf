@@ -11,7 +11,7 @@
     {% else %}
         
 
-        <div class="jumbotron">
+        <!-- <div class="jumbotron container"> -->
             <!-- {% if all_items %}
                 <h3>Items Available in Store..</h3>
                 <ul>
@@ -20,8 +20,10 @@
                     {% endfor %}
                 </ul>
             {% endif %} -->
+
+            
             <marquee><p class="lead">{{ api.0.ReportingArea }} Air Quality Index is {{ api.0.AQI }} as observed on {{ api.0.DateObserved }} {{ api.0.Category.Name }}</p></marquee>
-            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for country names..">    
+            <input type="text" id="myInput" onkeyup="searchByCountry()" placeholder="Search for country names..">    
             <div class="table-responsive">
             <table id="dCoronaVirusTable" class="table table-hover table table-striped">
                 <thead class="thead-dark">
@@ -54,7 +56,7 @@
         </div>
             <!-- <hr class="my-4"> -->
             
-        </div>
+        <!-- </div> -->
 
     {% endif %}
 {% endif %}

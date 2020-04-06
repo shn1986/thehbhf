@@ -1,0 +1,39 @@
+#myInput {
+    background-image: url('/static/admin/img/search/search_1.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 100%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+  }
+
+.counter {
+background-color:#f5f5f5;
+padding: 20px 0;
+border-radius: 5px;
+}
+
+.count-title {
+font-size: 40px;
+font-weight: normal;
+margin-top: 10px;
+margin-bottom: 0;
+text-align: center;
+}
+
+.count-text {
+font-size: 13px;
+font-weight: normal;
+margin-top: 10px;
+margin-bottom: 0;
+text-align: center;
+}
+
+.fa-2x {
+margin: 0 auto;
+float: none;
+display: table;
+color: #4ad1e5;
+}
