@@ -1,11 +1,38 @@
 {% extends 'base.html' %}
 {% block content %}
-<h3> Lahore Air Quality Index</h3>
-Date Observed: {{ api.0.DateObserved }}
-<br/>
-Reporting Area: {{ api.0.ReportingArea }}
-<br/>
-Air Quality Index: {{ api.0.AQI }}
-<br/>
-Category: {{ api.0.Category.Name }}
+<hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+        <h3 class="animated-element text-strong text-size-20 text-line-height-1 margin-bottom-20">What We Do for You?</h3>
+        <p class="animated-element slow margin-bottom-30">
+            We are an Information Technology company looking to 
+            provide development and support services worldwide. 
+            Our company is both product and project oriented having 
+            poised local and foreigner clients. 
+        </p>
+    </div>
+    <div class="col-md-3 col-sm-6">
+
+        <h3 class="animated-element text-strong text-size-20 text-line-height-1 margin-bottom-20">Vision Statement</h3>
+         <p class="animated-element slow margin-bottom-30">
+             Our vision is to become a leading technology company 
+             with clients acting as business partners having their 
+             share in the form of quality products which will be cost-effective, 
+             reliable and user friendly.
+         </p>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+        <h3 class="animated-element text-strong text-size-20 text-line-height-1 margin-bottom-20">Why TheHBHF?</h3>
+        <p class="animated-element slow margin-bottom-30">
+            Our exceptionally deep technical team expertise 
+            make us taking projects often perceived as too complex 
+            or difficult by other development companies in market.
+            We believe in working in close business relationship 
+            with our clients to understand their dynamic needs and working methodology.
+        </p>
+       </div>
+   </div>
+   </div>
 {% endblock %}

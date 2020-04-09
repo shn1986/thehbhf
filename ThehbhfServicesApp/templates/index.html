@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-{% block content %}
 
+{% block content %}
 {% if SearchCriteria %}
     {{ SearchCriteria}}
 {% endif %}
@@ -23,37 +23,7 @@
 
             
             <marquee><p class="lead">{{ api.0.ReportingArea }} Air Quality Index is {{ api.0.AQI }} as observed on {{ api.0.DateObserved }} {{ api.0.Category.Name }}</p></marquee>
-            <input type="text" id="myInput" onkeyup="searchByCountry()" placeholder="Search for country names..">    
-            <div class="table-responsive">
-            <table id="dCoronaVirusTable" class="table table-hover table table-striped">
-                <thead class="thead-dark">
-                    <tr>
-                      <th scope="col">Country</th>
-                      <th scope="col">New Confirmed</th>
-                      <th scope="col">Total Confirmed</th>
-                      <th scope="col">New Deaths</th>
-                      <th scope="col">Total Deaths</th>
-                      <th scope="col">New Recovered</th>
-                      <th scope="col">Total Recovered</th>
-                    </tr>
-                  </thead>
-                
-            {% for items in api_covid19_summary.Countries %}         
-               {% if items.Country and items.TotalConfirmed > 0 %}
-                <tr class="table-active">
-                    <td>{{ items.Country }}</td>
-                    <td>{{ items.NewConfirmed }}</td>
-                    <td>{{ items.TotalConfirmed }}</td>
-                    <td>{{ items.NewDeaths }}</td>
-                    <td>{{ items.TotalDeaths }}</td>
-                    <td>{{ items.NewRecovered }}</td>
-                    <td>{{ items.TotalRecovered }}</td>
-                 </tr>
-                {% endif %}
-            {% endfor %}
-            </tbody>
-        </table> 
-        </div>
+            
             <!-- <hr class="my-4"> -->
             
         <!-- </div> -->
